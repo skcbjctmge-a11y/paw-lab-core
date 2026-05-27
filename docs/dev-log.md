@@ -19,4 +19,11 @@
 ### 次にやること
 - package.json 作成
 - Firebase Functions 初期化
-- helloWorld テスト
+### 2026-05-27 追加ログ
+
+- GitHub Desktop 連携成功
+- initial commit 完了
+- push origin 成功
+- package.json UTF-8 修復
+- npm install は停止中（要確認）「調査対象」
+- Firebase Functions 初期化途中

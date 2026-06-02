@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "nekonote-ulcy3b"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }

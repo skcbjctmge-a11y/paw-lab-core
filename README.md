@@ -28,6 +28,10 @@ Paw Lab. は、
 - 壊れても戻れる
 - AIと共に育てる
 
+### 思想的土台（監督メモ）
+人間の複雑さを前提にした Paw 設計の根底。[もっちゃん人間観・Paw設計思想](docs/philosophy/motchyan-human-view-and-paw-design.md)  
+工房（ネコリ）向け: [AGENTS.md](AGENTS.md)
+
 ## 現在開発中
 - Paw循環設計
 - Discord神経網

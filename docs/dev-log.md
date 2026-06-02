@@ -1,5 +1,12 @@
 # Paw Lab. 開発ログ
 
+## 2026-05-31
+
+### 今日やったこと
+- 監督の人間観・Paw設計思想メモを `docs/philosophy/` に保存
+- ネコリ向け `AGENTS.md`、Cursor ルール `paw-design-philosophy.mdc` を追加
+- README / paw-system-v1 から思想ドキュメントへリンク
+
 ## 2026-05-27
 
 ### 今日やったこと

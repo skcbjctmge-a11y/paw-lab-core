@@ -26,9 +26,7 @@ import {onRequest} from "firebase-functions/https";
 // this will be the maximum concurrent request count.
 setGlobalOptions({ maxInstances: 10 });
 
-export const helloWorld = onRequest((request, response) => {
-  response.status(200).send("helloWorld");
-});
+
 export const sendPaw = onRequest((request, response) => {
   response.status(200).send("sendPaw 起動成功 🐾");
 });

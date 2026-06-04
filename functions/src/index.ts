@@ -9,7 +9,6 @@
 
 import {setGlobalOptions} from "firebase-functions";
 import {onRequest} from "firebase-functions/https";
-//import * as logger from "firebase-functions/logger";
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
@@ -24,9 +23,28 @@ import {onRequest} from "firebase-functions/https";
 // functions should each use functions.runWith({ maxInstances: 10 }) instead.
 // In the v1 API, each function can only serve one request per container, so
 // this will be the maximum concurrent request count.
-setGlobalOptions({ maxInstances: 10 });
+setGlobalOptions({maxInstances: 10});
 
+interface SendPawRequestBody {
+  senderRef?: unknown;
+  receiverRef?: unknown;
+  amount?: unknown;
+}
 
 export const sendPaw = onRequest((request, response) => {
-  response.status(200).send("sendPaw 起動成功 🐾");
+  const body = (request.body ?? {}) as SendPawRequestBody;
+  const {senderRef, receiverRef, amount} = body;
+
+  if (
+    senderRef === undefined ||
+    receiverRef === undefined ||
+    amount === undefined
+  ) {
+    response.status(400).json({
+      error: "senderRef, receiverRef, and amount are required",
+    });
+    return;
+  }
+
+  response.status(200).json({senderRef, receiverRef, amount});
 });

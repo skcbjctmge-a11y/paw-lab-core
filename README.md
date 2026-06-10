@@ -100,3 +100,13 @@ Next session:
 P11_select_receiver → Pass selectedReceiver → P12_matching → Execute sendPaw
 The heart of P12 is getting very close to its first real heartbeat. 🐾💓
 #Nekonote #PawLab #FlutterFlow #Firebase #AIDevelopment #SmallWinsEveryDay
+
+English Version
+Today I worked on debugging the Cloud Functions version of the Paw transfer system.
+The communication flow between FlutterFlow, Cloud Functions, and Firestore is working correctly, and deployment was completed successfully.
+The issue has now been narrowed down to the sender balance lookup process, with the error identified as:
+"sender balance not found"
+Although the feature is not fully working yet, the source of the problem has become much clearer.
+Since mental fatigue started to build up, I decided to stop for the day and continue later.
+Following the Nekonote philosophy: "Don't push too hard. Win in small steps." 🐾
+#PawLab #Nekonote #FlutterFlow #Firebase #CloudFunctions #IndieDev #BuildInPublic

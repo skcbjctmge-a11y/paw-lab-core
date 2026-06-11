@@ -110,3 +110,24 @@ Although the feature is not fully working yet, the source of the problem has bec
 Since mental fatigue started to build up, I decided to stop for the day and continue later.
 Following the Nekonote philosophy: "Don't push too hard. Win in small steps." 🐾
 #PawLab #Nekonote #FlutterFlow #Firebase #CloudFunctions #IndieDev #BuildInPublic
+
+【English Version】
+
+Today I continued working on the Cloud Functions implementation for the Paw transfer feature (sendPaw).
+
+I fixed several TypeScript errors and updated references from senderUserRefDoc and receiverUserRefDoc to the new structure using senderUserRefPath and receiverUserRefPath.
+
+After troubleshooting multiple issues one by one, I successfully reduced the Problems panel to zero errors. The code itself is now in a stable state.
+
+When attempting deployment, a Firebase CLI authentication error occurred. Through troubleshooting, I confirmed that the issue is related to Firebase authentication rather than the code.
+
+To avoid mental fatigue, I decided to stop at a good checkpoint and continue later.
+
+Today's achievements:
+
+- sendPaw code updated
+- TypeScript errors resolved
+- Problems panel reduced to zero
+- Authentication issue isolated
+
+A small but meaningful win toward the next step.

@@ -131,3 +131,57 @@ Today's achievements:
 - Authentication issue isolated
 
 A small but meaningful win toward the next step.
+
+### Development Log – 2026/06/13
+
+Today I continued investigating the sendPaw Cloud Function issue.
+
+Although the test still returned the error:
+
+"sender balance not found"
+
+the investigation actually made significant progress.
+
+The request successfully traveled through the entire chain:
+
+FlutterFlow
+→ API Call
+→ Cloud Functions
+→ sendPaw execution
+→ Error response
+
+This confirms that the network connection, API endpoint, and Cloud Function deployment are all working correctly.
+
+The problem is now isolated to the internal logic of sendPaw, specifically around how senderRef is matched against Firestore data.
+
+To narrow down the cause, I added debug code and continued tracing the comparison between senderRef and user_ref.
+
+During the investigation, I also discovered that Firebase CLI authentication had expired.
+
+Attempts to retrieve Cloud Functions logs resulted in an authentication error, and re-authentication failed with a Firebase CLI Login Failed message.
+
+While this may look like a setback, it was actually an important discovery. Without working log access, deeper debugging would have been impossible.
+
+Key achievements today:
+
+- Cloud Function deployment successful
+- API endpoint confirmed operational
+- Error source narrowed down significantly
+- Debug logging added
+- npm build environment verified
+- Firebase CLI authentication issue identified
+
+For the next session:
+
+1. Re-authenticate Firebase CLI
+2. Restore Cloud Functions log access
+3. Verify debug output
+4. Consider replacing DocumentReference matching with a simpler user_id string-based approach
+
+Today's biggest success was not fixing the bug.
+
+It was successfully narrowing the problem space while avoiding unnecessary burnout.
+
+Small wins. Safe progress. One step at a time.
+
+Deploy complete. 🚀🐾

@@ -185,3 +185,15 @@ It was successfully narrowing the problem space while avoiding unnecessary burno
 Small wins. Safe progress. One step at a time.
 
 Deploy complete. 🚀🐾
+
+Development Log – 2026/06/14
+Today I worked on the core backend function of Nekonote, the Cloud Function called sendPaw.
+After spending many hours troubleshooting the "sender balance not found" error, I revised the Firestore reference handling and switched to a string-path based approach for user_ref.
+As a result, the API test succeeded.
+Firestore balances were successfully updated, confirming that the sendPaw backend logic is working correctly.
+I also successfully created a Git commit:
+sendPaw deployed and API test success
+However, pushing to GitHub is currently blocked by a remote synchronization issue and will be resolved later.
+The FlutterFlow end-to-end test still failed to update balances, suggesting that the remaining issue is likely in the P12 Action configuration or API parameter mapping rather than in the backend itself.
+Next step: investigate P12 Actions and API wiring.
+Today was difficult, but it was a major milestone—the heart of Nekonote is finally beating. 🐾🚀

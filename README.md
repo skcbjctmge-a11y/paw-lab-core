@@ -197,3 +197,9 @@ However, pushing to GitHub is currently blocked by a remote synchronization issu
 The FlutterFlow end-to-end test still failed to update balances, suggesting that the remaining issue is likely in the P12 Action configuration or API parameter mapping rather than in the backend itself.
 Next step: investigate P12 Actions and API wiring.
 Today was difficult, but it was a major milestone—the heart of Nekonote is finally beating. 🐾🚀
+
+Today I tested the Cloud Functions version of the “Send Thanks” feature.
+Firebase authentication, Functions deployment, and API connectivity were verified successfully. The sendPaw API returned 200 Success, and Firestore balances changed from 950→900 and 1100→1150, confirming that Cloud Functions, Firestore, and the API are working correctly together.
+However, in the actual app flow, Cloud Logging showed senderRef:null / receiverRef:null. This indicates that the issue is no longer in Cloud Functions, but most likely in the value passing process within FlutterFlow.
+To reduce mental fatigue caused by reading long IDs, a new rule was established: use Google Lens to copy Firebase UIDs and Document IDs instead of reading them manually.
+The issue was not fully resolved today, but the scope was narrowed significantly. Tomorrow’s goal is to use fixed-value testing to determine whether the problem is in P12 or in the page-to-page parameter passing process. 🐾🚀

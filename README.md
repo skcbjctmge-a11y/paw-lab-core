@@ -203,3 +203,26 @@ Firebase authentication, Functions deployment, and API connectivity were verifie
 However, in the actual app flow, Cloud Logging showed senderRef:null / receiverRef:null. This indicates that the issue is no longer in Cloud Functions, but most likely in the value passing process within FlutterFlow.
 To reduce mental fatigue caused by reading long IDs, a new rule was established: use Google Lens to copy Firebase UIDs and Document IDs instead of reading them manually.
 The issue was not fully resolved today, but the scope was narrowed significantly. Tomorrow’s goal is to use fixed-value testing to determine whether the problem is in P12 or in the page-to-page parameter passing process. 🐾🚀
+
+Today I reviewed the FlutterFlow page structure and compared the current implementation with the original wireframe design.
+
+First, I tested the Cloud Functions-based sendPaw system. The API test returned a successful 200 response, and balance updates were confirmed, proving that the backend logic is functioning correctly.
+
+Next, I inspected pages P03 through P14 and reorganized my understanding of the project structure.
+
+Key findings:
+
+- P10 is the history screen.
+- P11 is currently unused.
+- P12 is the production backend “heart” powered by Cloud Functions.
+- P09 was the original MVP “heart.”
+
+By revisiting the archived wireframes, I was able to reconnect with the original design philosophy and user flow.
+
+The original MVP flow was:
+
+01 → 03 → SOS → 08 → 09 → 03
+
+and the current direction is to replace the old P09 processing role with the new P12 backend-powered system.
+
+Finally, the wireframe documents were archived in the “99 Storage” area. Future development will be guided by the original design documents while rebuilding the production user flow.

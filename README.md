@@ -226,3 +226,11 @@ The original MVP flow was:
 and the current direction is to replace the old P09 processing role with the new P12 backend-powered system.
 
 Finally, the wireframe documents were archived in the “99 Storage” area. Future development will be guided by the original design documents while rebuilding the production user flow.
+
+Today I worked on troubleshooting the balance display issue in P03_home.
+Since the sendPaw Cloud Function has been successfully deployed, I moved on to restoring the balance display on the home screen.
+I checked the Firestore collections (users and paw_balances), query settings, and variable bindings. I also performed a fixed-value test.
+The fixed value "500" displayed correctly, which indicates that the UI itself is working and the issue is likely related to retrieving data from Firestore.
+This reminded me that FlutterFlow often requires time-consuming investigation because many internal processes are hidden behind a visual interface.
+I stopped work before fatigue became too severe and will continue tomorrow.
+Tomorrow's goal is to investigate the P03_home query configuration and restore the balance display. 🐾

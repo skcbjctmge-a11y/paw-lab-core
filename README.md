@@ -234,3 +234,24 @@ The fixed value "500" displayed correctly, which indicates that the UI itself is
 This reminded me that FlutterFlow often requires time-consuming investigation because many internal processes are hidden behind a visual interface.
 I stopped work before fatigue became too severe and will continue tomorrow.
 Tomorrow's goal is to investigate the P03_home query configuration and restore the balance display. 🐾
+
+
+Today, I worked on improving the balance display on the P03_home screen of the Nekonote app.
+
+The previous Firestore direct query caused the page to stay in an endless loading state. To solve this, I added a new Cloud Functions API called getMyPawBalance.
+
+The API successfully returned the user’s balance in the terminal, and FlutterFlow’s API test also returned 200 Success.
+
+The endless loading issue on P03_home has now been resolved.
+The remaining task is to display the fetched balance value on the screen.
+
+If FlutterFlow cannot handle the display binding smoothly, I will code only that small part as a custom solution.
+
+Finally, I saved today’s Cloud Functions changes to GitHub.
+After a push rejection, I ran git pull --rebase and successfully pushed the changes.
+
+Result:
+Cloud Functions works.
+FlutterFlow API test works.
+The loading issue is fixed.
+Only the display binding remains.

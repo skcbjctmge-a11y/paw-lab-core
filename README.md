@@ -255,3 +255,16 @@ Cloud Functions works.
 FlutterFlow API test works.
 The loading issue is fixed.
 Only the display binding remains.
+
+Today’s Nekonote dev log:
+
+We moved the Paw balance display on P03_home from FlutterFlow binding to a Custom Widget.
+
+The widget now calls Cloud Functions, reads the Firestore paw_balances data, and reflects actual balance changes after P12/sendPaw.
+
+Confirmed:
+601 → 551 → 501
+
+FlutterFlow handles UI.
+Cloud Functions handles the Paw bank logic.
+The MVP core is now connected.

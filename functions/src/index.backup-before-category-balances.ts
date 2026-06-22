@@ -33,12 +33,6 @@ createdBalance: boolean;
 mintedThanks: number;
 mintedBasic: number;
 balance: number;
-totalBalance: number;
-thanksBalance: number;
-basicBalance: number;
-activityBalance: number;
-mutualAidBalance: number;
-legacyBalance: number;
 todayKey: string;
 monthKey: string;
 }
@@ -76,16 +70,6 @@ function addMonths(date: Date, months: number): Date {
 const result = new Date(date);
 result.setMonth(result.getMonth() + months);
 return result;
-}
-
-function toNumber(value: unknown, fallback = 0): number {
-const numberValue = Number(value);
-
-if (!Number.isFinite(numberValue)) {
-return fallback;
-}
-
-return numberValue;
 }
 
 async function findBalanceDocByUserId(targetUserId: string) {
@@ -142,55 +126,17 @@ const monthlyLedgerRef = db
 let createdBalance = false;
 let mintedThanks = 0;
 let mintedBasic = 0;
-
 let finalBalance = 0;
-let finalTotalBalance = 0;
-let finalThanksBalance = 0;
-let finalBasicBalance = 0;
-let finalActivityBalance = 0;
-let finalMutualAidBalance = 0;
-let finalLegacyBalance = 0;
 
 await db.runTransaction(async (transaction) => {
 const balanceSnap = await transaction.get(balanceRef);
 const dailyLedgerSnap = await transaction.get(dailyLedgerRef);
 const monthlyLedgerSnap = await transaction.get(monthlyLedgerRef);
 
-let previousBalance = 0;
-let thanksBalance = 0;
-let basicBalance = 0;
-let activityBalance = 0;
-let mutualAidBalance = 0;
-let legacyBalance = 0;
+let currentBalance = 0;
 
 if (balanceSnap.exists) {
-  const data = balanceSnap.data() ?? {};
-
-  previousBalance = toNumber(data.balance, 0);
-
-  thanksBalance = data.thanks_balance === undefined
-    ? dailyLedgerSnap.exists ? 50 : 0
-    : toNumber(data.thanks_balance, 0);
-
-  basicBalance = data.basic_balance === undefined
-    ? monthlyLedgerSnap.exists ? 300 : 0
-    : toNumber(data.basic_balance, 0);
-
-  activityBalance = toNumber(data.activity_balance, 0);
-  mutualAidBalance = toNumber(data.mutual_aid_balance, 0);
-
-  if (data.legacy_balance === undefined) {
-    legacyBalance = Math.max(
-      previousBalance -
-        thanksBalance -
-        basicBalance -
-        activityBalance -
-        mutualAidBalance,
-      0
-    );
-  } else {
-    legacyBalance = toNumber(data.legacy_balance, 0);
-  }
+  currentBalance = Number(balanceSnap.get("balance") ?? 0);
 } else {
   createdBalance = true;
 
@@ -198,12 +144,6 @@ if (balanceSnap.exists) {
     user_id: userId,
     user_ref: db.doc("users/" + userId),
     balance: 0,
-    total_balance: 0,
-    thanks_balance: 0,
-    basic_balance: 0,
-    activity_balance: 0,
-    mutual_aid_balance: 0,
-    legacy_balance: 0,
     created_at: admin.firestore.FieldValue.serverTimestamp(),
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   });
@@ -211,7 +151,7 @@ if (balanceSnap.exists) {
 
 if (!dailyLedgerSnap.exists) {
   mintedThanks = 50;
-  thanksBalance += mintedThanks;
+  currentBalance += mintedThanks;
 
   transaction.set(dailyLedgerRef, {
     user_id: userId,
@@ -230,7 +170,7 @@ if (!dailyLedgerSnap.exists) {
 
 if (!monthlyLedgerSnap.exists) {
   mintedBasic = 300;
-  basicBalance += mintedBasic;
+  currentBalance += mintedBasic;
 
   transaction.set(monthlyLedgerRef, {
     user_id: userId,
@@ -245,32 +185,18 @@ if (!monthlyLedgerSnap.exists) {
   });
 }
 
-const totalBalance = legacyBalance + thanksBalance + basicBalance;
-
 transaction.set(
   balanceRef,
   {
     user_id: userId,
     user_ref: db.doc("users/" + userId),
-    balance: totalBalance,
-    total_balance: totalBalance,
-    thanks_balance: thanksBalance,
-    basic_balance: basicBalance,
-    activity_balance: activityBalance,
-    mutual_aid_balance: mutualAidBalance,
-    legacy_balance: legacyBalance,
+    balance: currentBalance,
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   },
   { merge: true }
 );
 
-finalBalance = totalBalance;
-finalTotalBalance = totalBalance;
-finalThanksBalance = thanksBalance;
-finalBasicBalance = basicBalance;
-finalActivityBalance = activityBalance;
-finalMutualAidBalance = mutualAidBalance;
-finalLegacyBalance = legacyBalance;
+finalBalance = currentBalance;
 
 });
 
@@ -281,12 +207,6 @@ createdBalance,
 mintedThanks,
 mintedBasic,
 balance: finalBalance,
-totalBalance: finalTotalBalance,
-thanksBalance: finalThanksBalance,
-basicBalance: finalBasicBalance,
-activityBalance: finalActivityBalance,
-mutualAidBalance: finalMutualAidBalance,
-legacyBalance: finalLegacyBalance,
 todayKey,
 monthKey,
 };
@@ -409,11 +329,8 @@ await db.runTransaction(async (transaction) => {
     throw new Error("receiver balance not found: " + receiverId);
   }
 
-  const senderData = senderDoc.data();
-  const receiverData = receiverDoc.data();
-
-  const senderBalance = toNumber(senderData.balance, 0);
-  const receiverBalance = toNumber(receiverData.balance, 0);
+  const senderBalance = Number(senderDoc.get("balance") ?? 0);
+  const receiverBalance = Number(receiverDoc.get("balance") ?? 0);
 
   if (senderBalance < amount) {
     throw new Error("insufficient balance");
@@ -421,13 +338,11 @@ await db.runTransaction(async (transaction) => {
 
   transaction.update(senderDoc.ref, {
     balance: senderBalance - amount,
-    total_balance: senderBalance - amount,
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   });
 
   transaction.update(receiverDoc.ref, {
     balance: receiverBalance + amount,
-    total_balance: receiverBalance + amount,
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   });
 
@@ -439,7 +354,7 @@ await db.runTransaction(async (transaction) => {
     sender_ref: db.doc("users/" + senderId),
     receiver_ref: db.doc("users/" + receiverId),
     type: "thanks",
-    typeLabel: "thanks_paw",
+    typeLabel: "ありがとぁEaw",
     amount,
     status: "completed",
     created_at: admin.firestore.FieldValue.serverTimestamp(),
@@ -477,6 +392,7 @@ return;
 try {
 const userId = getUserIdFromRequest(request);
 
+
 console.log("getMyPawBalance received", {
   body: request.body,
   query: request.query,
@@ -498,12 +414,6 @@ response.status(200).json({
   success: true,
   userId: result.userId,
   balance: result.balance,
-  total_balance: result.totalBalance,
-  thanks_balance: result.thanksBalance,
-  basic_balance: result.basicBalance,
-  activity_balance: result.activityBalance,
-  mutual_aid_balance: result.mutualAidBalance,
-  legacy_balance: result.legacyBalance,
   createdBalance: result.createdBalance,
   mintedThanks: result.mintedThanks,
   mintedBasic: result.mintedBasic,
@@ -514,6 +424,7 @@ response.status(200).json({
 } catch (error: unknown) {
 const message = error instanceof Error ? error.message : String(error);
 
+
 console.error("getMyPawBalance error", {
   message,
 });
@@ -523,6 +434,7 @@ response.status(400).json({
   error: message,
   balance: 0,
 });
+
 
 }
 });

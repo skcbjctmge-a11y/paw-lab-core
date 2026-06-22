@@ -268,3 +268,33 @@ Confirmed:
 FlutterFlow handles UI.
 Cloud Functions handles the Paw bank logic.
 The MVP core is now connected.
+
+【English Summary】
+
+Today was a major turning point for the Nekonote project.
+
+We confirmed the limitations of continuing everything inside FlutterFlow, including Custom Widget parsing issues, the NO_USER problem, and paid-feature barriers.
+Instead of forcing the app to stay inside FlutterFlow, we shifted toward building the main Nekonote app directly with Flutter code.
+
+We installed the Flutter SDK, created a new Flutter app at "C:\dev\nekonote_app", and replaced "main.dart" with a custom P03_home screen.
+The screen successfully launched in Chrome.
+
+Next, we connected the Flutter app to the existing Cloud Functions backend, especially "getMyPawBalance".
+The app successfully displayed Paw balances for three test users: Motchan, Kinoshita-san, and Mint-san.
+
+Each user showed:
+
+Total: 350 Paw
+Thanks Paw: 50
+Basic Paw: 300
+Activity Record: 0
+Mutual Aid Pool: 0
+
+The new direction is now clear:
+
+FlutterFlow = design reference and prototype tool
+Cloud Functions = Paw banking engine
+nekonote_app = main Flutter application
+Flutter Web / PWA = future publishing route
+
+Today marks the day Nekonote stepped out of the FlutterFlow sandbox and entered its own Flutter workshop.

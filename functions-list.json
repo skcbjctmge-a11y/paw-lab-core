@@ -1,0 +1,104 @@
+﻿{
+  "status": "success",
+  "result": [
+    {
+      "platform": "gcfv2",
+      "id": "getMyPawBalance",
+      "project": "nekonote-ulcy3b",
+      "region": "us-central1",
+      "httpsTrigger": {},
+      "entryPoint": "getMyPawBalance",
+      "runtime": "nodejs24",
+      "source": {
+        "storageSource": {
+          "bucket": "gcf-v2-sources-877785399147-us-central1",
+          "object": "getMyPawBalance/function-source.zip",
+          "generation": "1781765698676829"
+        }
+      },
+      "ingressSettings": "ALLOW_ALL",
+      "environmentVariables": {
+        "FIREBASE_CONFIG": "{\"projectId\":\"nekonote-ulcy3b\",\"storageBucket\":\"nekonote-ulcy3b.firebasestorage.app\"}",
+        "GCLOUD_PROJECT": "nekonote-ulcy3b",
+        "EVENTARC_CLOUD_EVENT_SOURCE": "projects/nekonote-ulcy3b/locations/us-central1/services/getMyPawBalance",
+        "FUNCTION_TARGET": "getMyPawBalance",
+        "LOG_EXECUTION_ID": "true"
+      },
+      "timeoutSeconds": 60,
+      "uri": "https://us-central1-nekonote-ulcy3b.cloudfunctions.net/getMyPawBalance",
+      "serviceAccount": "877785399147-compute@developer.gserviceaccount.com",
+      "availableMemoryMb": 256,
+      "cpu": 1,
+      "maxInstances": 10,
+      "concurrency": 80,
+      "labels": {
+        "deployment-tool": "cli-firebase",
+        "firebase-functions-hash": "3763fac750dea076098fe7f4a82c486a1e899c1f"
+      },
+      "runServiceId": "getmypawbalance",
+      "codebase": "default",
+      "hash": "3763fac750dea076098fe7f4a82c486a1e899c1f",
+      "state": "ACTIVE"
+    },
+    {
+      "platform": "gcfv2",
+      "id": "helloWorld",
+      "project": "nekonote-ulcy3b",
+      "region": "us-central1",
+      "httpsTrigger": {},
+      "entryPoint": "helloWorld",
+      "runtime": "nodejs24",
+      "source": {
+        "storageSource": {
+          "bucket": "gcf-v2-sources-877785399147-us-central1",
+          "object": "helloWorld/function-source.zip",
+          "generation": "1780470133605792"
+        }
+      },
+      "uri": "https://us-central1-nekonote-ulcy3b.cloudfunctions.net/helloWorld",
+      "codebase": "default",
+      "hash": "aae8cfa8a9442cbe1dcec7896d52d7457680faeb",
+      "state": "FAILED"
+    },
+    {
+      "platform": "gcfv2",
+      "id": "sendPaw",
+      "project": "nekonote-ulcy3b",
+      "region": "us-central1",
+      "httpsTrigger": {},
+      "entryPoint": "sendPaw",
+      "runtime": "nodejs24",
+      "source": {
+        "storageSource": {
+          "bucket": "gcf-v2-sources-877785399147-us-central1",
+          "object": "sendPaw/function-source.zip",
+          "generation": "1781765757259375"
+        }
+      },
+      "ingressSettings": "ALLOW_ALL",
+      "environmentVariables": {
+        "FIREBASE_CONFIG": "{\"projectId\":\"nekonote-ulcy3b\",\"storageBucket\":\"nekonote-ulcy3b.firebasestorage.app\"}",
+        "GCLOUD_PROJECT": "nekonote-ulcy3b",
+        "EVENTARC_CLOUD_EVENT_SOURCE": "projects/nekonote-ulcy3b/locations/us-central1/services/sendPaw",
+        "FUNCTION_TARGET": "sendPaw",
+        "LOG_EXECUTION_ID": "true",
+        "FUNCTION_SIGNATURE_TYPE": "http"
+      },
+      "timeoutSeconds": 60,
+      "uri": "https://us-central1-nekonote-ulcy3b.cloudfunctions.net/sendPaw",
+      "serviceAccount": "877785399147-compute@developer.gserviceaccount.com",
+      "availableMemoryMb": 256,
+      "cpu": 1,
+      "maxInstances": 10,
+      "concurrency": 80,
+      "labels": {
+        "firebase-functions-hash": "3763fac750dea076098fe7f4a82c486a1e899c1f",
+        "deployment-tool": "cli-firebase"
+      },
+      "runServiceId": "sendpaw",
+      "codebase": "default",
+      "hash": "3763fac750dea076098fe7f4a82c486a1e899c1f",
+      "state": "ACTIVE"
+    }
+  ]
+}

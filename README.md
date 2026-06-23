@@ -298,3 +298,20 @@ nekonote_app = main Flutter application
 Flutter Web / PWA = future publishing route
 
 Today marks the day Nekonote stepped out of the FlutterFlow sandbox and entered its own Flutter workshop.
+
+Today was a major milestone.
+
+I improved the P10 Paw history screen, and the tabs for “All,” “Received,” and “Sent” now work properly.
+
+I also added expiration date display, plus a card for Paw that is close to expiring. This made the Paw circulation design visible in the app UI.
+
+The route from the P03 home screen to the history screen was confirmed, and flutter analyze finally returned “No issues found.”
+
+Most importantly, the flutter_ui folder, which had not been under Git control, is now managed by Git and saved as a private GitHub repository.
+
+I also confirmed that flutter_ui appears on GitHub from my smartphone.
+
+This was not just a UI update.
+It was the day the Nekonote app code was placed somewhere it will not be lost.
+
+Deploy complete.

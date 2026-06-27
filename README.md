@@ -315,3 +315,9 @@ This was not just a UI update.
 It was the day the Nekonote app code was placed somewhere it will not be lost.
 
 Deploy complete.
+
+The Paw Bank direct-read route is open.
+
+Today I confirmed that a custom Dart widget can read Firestore paw_balances without relying on FlutterFlow API Calls. The permission-denied issue was solved by updating Firestore Rules, and 350 Paw displayed successfully.
+
+801 Paw still needs query matching fixes, but the core result is clear: FlutterFlow can stay as the PWA shell, while the app logic, Paw Bank, map, and LINE integration can be built independently.

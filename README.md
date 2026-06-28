@@ -321,3 +321,17 @@ The Paw Bank direct-read route is open.
 Today I confirmed that a custom Dart widget can read Firestore paw_balances without relying on FlutterFlow API Calls. The permission-denied issue was solved by updating Firestore Rules, and 350 Paw displayed successfully.
 
 801 Paw still needs query matching fixes, but the core result is clear: FlutterFlow can stay as the PWA shell, while the app logic, Paw Bank, map, and LINE integration can be built independently.
+
+The Paw Bank made another big step forward today.
+
+We successfully displayed 801 Paw by reading directly from Firestore.
+We confirmed fixed document ID reading, userId parameter reading, and even verified that Anonymous Login can pass the Authenticated User ID into PawBalanceText.
+
+The final issue was narrowed down to a UID mismatch between the logged-in user and paw_balances.user_id.
+
+So this is no longer a mystery inside FlutterFlow.
+We are starting to rebuild the inside of the Paw Bank ATM ourselves with Dart, Firestore, and Functions.
+
+FlutterFlow is becoming the shell.
+The heart is becoming ours.
+Nekonote moved one step closer to a real Paw Bank today.

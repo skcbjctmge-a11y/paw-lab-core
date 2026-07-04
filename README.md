@@ -335,3 +335,24 @@ We are starting to rebuild the inside of the Paw Bank ATM ourselves with Dart, F
 FlutterFlow is becoming the shell.
 The heart is becoming ours.
 Nekonote moved one step closer to a real Paw Bank today.
+
+Paw Bank officially opened today.
+
+We stopped chasing the unstable Anonymous Login UID, which kept changing and causing endless NO_BALANCE checks.
+Instead, we switched to a fixed email login.
+
+We also found and fixed a missing schema issue in FlutterFlow:
+user_id:String was not registered in the paw_balances schema.
+
+After linking the fixed UID of motoki_test to paw_balances.user_id, P03_home successfully displayed 350 Paw.
+
+In other words:
+the app received the logged-in user’s UID,
+searched the Paw account in Firestore,
+and displayed that user’s Paw balance.
+
+This was not just a display test.
+It was the first successful step toward giving each user — Motchan, Mint-san, Kinoshita-san — their own Paw account after login.
+
+Anonymous Homo sapiens was too unstable, so we graduated from it.
+With fixed-UID Homo sapiens, the Paw Bank ATM moved one big step forward.

@@ -356,3 +356,106 @@ It was the first successful step toward giving each user — Motchan, Mint-san, 
 
 Anonymous Homo sapiens was too unstable, so we graduated from it.
 With fixed-UID Homo sapiens, the Paw Bank ATM moved one big step forward.
+
+【Today’s Field Log】
+
+Today became a major turning point for the Nekonote project.
+
+First, the Paw Bank ATM display test succeeded for three users:
+Motchan, Mint-san, and Kinoshita-san.
+
+Each login UID was linked to paw_balances.user_id,
+and P03_home successfully displayed 350 Paw for each user.
+
+This confirmed the basic structure of Firebase Auth, Firestore, Paw accounts, and Paw balance display.
+
+The heart of Paw Bank is alive.
+
+Based on that, we整理ed the development direction.
+
+FlutterFlow is the prototype machine.
+PWA is the real working road.
+Firebase is the heart.
+
+The current FlutterFlow version will not be thrown away.
+It will remain as a test machine, prototype, and safety backup.
+
+For the future main frontend, Nekonote will move toward PWA.
+
+However, for the 25th Volunteer Fair,
+we updated the plan:
+instead of building a new PWA from scratch,
+we will use Ren’s existing Flutter UI shell.
+
+We found the Ren UI project at:
+
+C:\dev\nekonote_flutter_ui\flutter_ui
+
+We launched it in Chrome and confirmed the screens and navigation:
+
+P03_home,
+P07_sos,
+P08_category,
+P10_history,
+P14_complete.
+
+The home screen, SOS screen, category selection, thank-you flow, history screen, and complete screen are already well built.
+
+We judged that Ren’s Flutter UI is good enough to be used as the Volunteer Fair demo machine.
+
+At the fair, we will not run the real production app.
+
+Instead, we will use it as the “Nekonote Volunteer Fair QR Demo Machine.”
+
+Visitors will scan a QR code,
+open the demo on their own smartphones,
+and experience Ren’s UI.
+
+What we want them to experience:
+
+They can see Paw balance.
+They can send thanks and see Paw move.
+They can see help records appear in history.
+They can intuitively understand the world of Nekonote.
+
+However, the demo will not connect to the real Paw Bank.
+
+We will not use:
+
+real user accounts,
+production sendPaw,
+production Firestore data,
+real notifications,
+real location data,
+or real identity verification.
+
+At the fair, only demo Paw will move inside the screen.
+
+The key phrase is:
+
+Protect the real vault.
+Move only demo Paw at the fair.
+
+We also decided that we need an A3 color explanation sheet for Paw.
+
+It should explain Paw simply and clearly.
+
+Paw is not money.
+It is not something to cash out.
+It is a system for making thanks and mutual help visible.
+
+At the fair, we will show the QR demo together with the A3 explanation sheet.
+
+Today’s conclusion:
+
+FlutterFlow is the prototype machine.
+PWA is the real working road.
+Firebase is the heart.
+
+At the fair, we will show Ren’s Flutter UI.
+We will protect the real vault.
+We will move only demo Paw.
+In the future, something close to this form will reach local people as a real PWA app.
+
+Field check complete.
+Safety first.

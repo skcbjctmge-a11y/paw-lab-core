@@ -459,3 +459,14 @@ In the future, something close to this form will reach local people as a real PW
 
 Field check complete.
 Safety first.
+
+Today, I safely archived the first nekonote-pwa package, launched it as a React and Vite PWA, and tested it successfully on a smartphone.
+I updated the public landing page to reflect the latest Nekonote design:
+Removed the RGH reference
+Added four participation categories
+Updated the Paw circulation rules
+Added Mutual Aid Paw and burn-and-mint explanations
+Added a local shopping street and café use case
+Added the ideas of community belonging and local economic circulation
+Finally, I initialized Git and pushed the working version to a private GitHub repository named nekonote-pwa.
+The first PWA version is now much closer to a real public release.

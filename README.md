@@ -470,3 +470,17 @@ Added a local shopping street and café use case
 Added the ideas of community belonging and local economic circulation
 Finally, I initialized Git and pushed the working version to a private GitHub repository named nekonote-pwa.
 The first PWA version is now much closer to a real public release.
+
+Today, I made major improvements to the Nekonote PWA.
+
+I fixed the official LINE consultation button, added an explanation of the PWA, included a practical example of how local shops could participate, and published three official documents:
+
+- Organization Rules
+- Community Volunteer and Crime Prevention Cooperation Report
+- FY2026 Business Plan
+
+After resolving Firebase login issues and a double “.pdf” filename problem, I rebuilt and redeployed the PWA successfully.
+
+The main site is working correctly. Only the in-browser PDF display on some devices still needs another check tomorrow.
+
+Deploy complete! 🐾🔥

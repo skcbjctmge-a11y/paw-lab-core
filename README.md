@@ -484,3 +484,22 @@ After resolving Firebase login issues and a double “.pdf” filename problem, 
 The main site is working correctly. Only the in-browser PDF display on some devices still needs another check tomorrow.
 
 Deploy complete! 🐾🔥
+
+Today I started building the production version of the Nekonote PWA using React, TypeScript, and Vite.
+I created a separate production folder, connected it to a private GitHub repository, and implemented the following screens:
+Welcome screen
+Home screen
+Request category selection
+Request details form
+Confirmation screen
+The six request categories are:
+Taking out the trash
+Shopping
+Cleaning
+Someone to talk to
+Walking a pet
+Other
+The app now keeps the selected category and entered information, displays them on the confirmation screen, and allows the user to return and make corrections.
+I was also told that 150 kg is the attendance limit for my day-care program. If I cross that line, hospitalization may interrupt development.
+So this is not a diet for appearance.
+It is maintenance work to prevent the Nekonote development environment from shutting down.

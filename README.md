@@ -503,3 +503,13 @@ The app now keeps the selected category and entered information, displays them o
 I was also told that 150 kg is the attendance limit for my day-care program. If I cross that line, hospitalization may interrupt development.
 So this is not a diet for appearance.
 It is maintenance work to prevent the Nekonote development environment from shutting down.
+
+Today, I tested the request-posting screen of the Nekonote PWA on a smartphone.
+
+I adjusted the date-selection calendar and the analog time picker so they can be used on both desktop and mobile devices.
+
+After several small layout fixes, I saved the latest version to GitHub.
+
+Next, I will connect the form to Firestore so that submitted requests are actually stored.
+
+Step by step, Nekonote is moving from “a screen that works” to “a system people can truly use.” 🐾

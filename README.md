@@ -513,3 +513,13 @@ After several small layout fixes, I saved the latest version to GitHub.
 Next, I will connect the form to Firestore so that submitted requests are actually stored.
 
 Step by step, Nekonote is moving from “a screen that works” to “a system people can truly use.” 🐾
+
+Today was a major step forward for Nekonote.
+
+We completed the demo login flow for our PWA by updating the email link destination, rebuilding, deploying, and configuring Firebase Authentication. The full login process—from receiving the email to entering the app—now works in the production demo environment.
+
+We also adopted a new development rule:
+
+"Every daily report must include the next task."
+
+A small habit that will help both humans and AI stay on track. 🐾

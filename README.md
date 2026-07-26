@@ -523,3 +523,18 @@ We also adopted a new development rule:
 "Every daily report must include the next task."
 
 A small habit that will help both humans and AI stay on track. 🐾
+
+
+Today, we successfully deployed the latest version of the Nekonote production PWA and confirmed that the login emails are now properly localized in Japanese.
+At the same time, our 2,200-line App.tsx file caused cognitive overload, confusion, and incorrect assumptions during development.
+Instead of treating this as just a technical mistake, we turned it into a permanent workshop rule.
+The Nekonote Workshop Development Constitution:
+Article 1: Keep the workshop running through clear handovers.
+Article 2: AI should propose structural improvements before confusion begins.
+Article 3: Never waste a teammate’s time, energy, or concentration.
+We do not hide mistakes.
+We turn them into systems that prevent the same mistake from happening again.
+Another step toward our goal:
+“A workshop that keeps moving, even when one member is unavailable.”
+Tomorrow, we will begin safely splitting App.tsx into smaller, maintainable parts.
+#Nekonote #AIdevelopment #IndieDevelopment #CivicTech #Accessibility #SocialGood

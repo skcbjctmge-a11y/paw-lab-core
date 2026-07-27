@@ -538,3 +538,16 @@ Another step toward our goal:
 “A workshop that keeps moving, even when one member is unavailable.”
 Tomorrow, we will begin safely splitting App.tsx into smaller, maintainable parts.
 #Nekonote #AIdevelopment #IndieDevelopment #CivicTech #Accessibility #SocialGood
+
+
+Today, I fixed Google sign-in and sign-out in the Nekonote PWA and started splitting the large App.tsx file into separate screen components.
+
+The completion screen was successfully separated, and the project build passed without TypeScript errors.
+
+However, manually extracting each screen one by one was much more demanding than expected.
+
+Even when refactoring is necessary, the process should not depend on endurance or willpower.
+
+Tomorrow, before starting, we will estimate the number of operations required and confirm whether the work can be completed within three hours.
+
+When humans and AI build something together, we need to design not only the code, but also the human workload.

@@ -551,3 +551,19 @@ Even when refactoring is necessary, the process should not depend on endurance o
 Tomorrow, before starting, we will estimate the number of operations required and confirm whether the work can be completed within three hours.
 
 When humans and AI build something together, we need to design not only the code, but also the human workload.
+
+Today’s Nekonote development update 🐾
+
+I added a Threads card to the volunteer fair PWA.
+
+The TSX structure broke during the first attempt, so we immediately restored a clean backup. We then checked the build, deployment, live JavaScript file, browser cache, and Service Worker step by step.
+
+The final result is exactly what we wanted: the Threads card remains in the social media section, while the unnecessary Threads link in the footer has been removed.
+
+Development felt like climbing a rock wall today: secure each step first, then keep moving quickly and safely 😊
+
+#Nekonote
+#CommunityVolunteering
+#PWADevelopment
+#DisabilityInclusion
+#HumanAICollaboration

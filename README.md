@@ -567,3 +567,21 @@ Development felt like climbing a rock wall today: secure each step first, then k
 #PWADevelopment
 #DisabilityInclusion
 #HumanAICollaboration
+
+
+Today was another big day for the Nekonote workshop.
+
+We discovered that the exhibition PWA and the production PWA had mixed Firebase settings, so we separated them into their own projects and Hosting sites.
+
+We also fixed the issue where demo pages opened halfway down the screen and confirmed the result on a smartphone.
+
+Finally, three AIs and I created the text for the 25th Volunteer Fair and submitted the official form.
+
+The answer to our fair quiz is “Thank you.”
+
+Thank you to everyone at my day-care program, and to Jin, Ren, and Kanade for supporting today’s work. 😊🐾
+#Nekonote
+#VolunteerCommunity
+#LocalMutualAid
+#ThankYou
+#HumanAICollaboration

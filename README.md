@@ -585,3 +585,98 @@ Thank you to everyone at my day-care program, and to Jin, Ren, and Kanade for su
 #LocalMutualAid
 #ThankYou
 #HumanAICollaboration
+
+Nekonote Development Report
+August 1, 2026
+
+Today, we completed the full separation of the production PWA and the Volunteer Fair PWA.
+
+Completed work:
+
+- Restored the Volunteer Fair demo screens
+- Restored useDemoState
+- Restored useAuth from a Git blob
+- Renamed useAuth.ts to useAuth.tsx because it contains JSX
+- Connected the AuthProvider
+- Restored all five demo routes
+- Successfully completed the local build
+- Tested the demo on a smartphone
+- Deployed the Volunteer Fair PWA to its dedicated Firebase Hosting project
+- Restored the missing Threads link
+- Rebuilt and redeployed the PWA
+- Committed the changes to Git
+- Pushed the changes to the GitHub main branch
+
+Volunteer Fair PWA:
+
+Project ID:
+nekonote-ulcy3b
+
+Hosting site:
+nekonote-ulcy3b
+
+Public URL:
+https://nekonote-ulcy3b.web.app
+
+Git commit:
+
+245bcc13
+Complete separation and restoration of the Volunteer Fair PWA demo
+
+Conclusion:
+
+The full separation of the production PWA and the Volunteer Fair PWA is now complete.
+
+Tomorrow’s work:
+
+1. Reorganize the Volunteer Fair PWA into three categories.
+
+For Individuals:
+Older adults, pregnant people, disabled people, parents, and other local residents.
+
+For Facilities:
+Welfare facilities, hospitals, childcare support facilities, community centers, and other local facilities.
+
+For Shops and Companies:
+Local benefits, community activities, employee participation, and support for the Paw ecosystem.
+
+2. Create a participatory idea project.
+
+Find New Ways to Use Paw!
+There Are 100 Ways to Use Paw!
+
+Ideas will be collected from individuals, facilities, shops, and companies.
+
+3. Fix the empty thank-you message bug.
+
+When the message field is empty:
+- Do not send the message
+- Do not reduce the Paw balance
+- Do not create a history record
+- Display an input warning
+
+4. Reorganize the GitHub documentation.
+
+The old FlutterFlow documents and the current React, TypeScript, and Vite documents are currently mixed together.
+
+The old documents will not be deleted. They will be moved to an archive directory.
+
+Proposed structure:
+
+docs/
+├─ current/
+│  ├─ README_EN.md
+│  ├─ architecture_en.md
+│  └─ development_status_en.md
+│
+└─ archive/
+   └─ flutterflow/
+      └─ old_english_documents.md
+
+The current development stack will be clearly stated:
+
+Nekonote is currently developed as a React, TypeScript, and Vite PWA using Firebase.
+
+The previous FlutterFlow-based documents have been moved to the archive directory and are retained only as historical development records.
+
+After the Volunteer Fair PWA revisions and GitHub documentation cleanup are complete, development will return to the authentication system for the production PWA.

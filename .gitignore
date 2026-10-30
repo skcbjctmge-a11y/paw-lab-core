@@ -65,6 +65,9 @@ node_modules/
 # dotenv environment variables file
 .env
 
+# Local deploy snapshots (must not be committed)
+functions-list.json
+
 # dataconnect generated files
 .dataconnect
 .env
